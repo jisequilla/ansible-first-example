@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
 		StrictHostKeyChecking no
 		UserKnownHostFile=/dev/null
 SSHEOF
-		chown -R vagrant:vagrant /home/vagrant.ssh/
+		chown -R vagrant:vagrant /home/vagrant/.ssh/
 SCRIPT
 
         # Update authorized keys on server
@@ -77,7 +77,7 @@ SCRIPT
 	end
 
 	config.vm.define "loadbalancer-service" do |loadbalancerserver|
-		loadbalancerserver.vm.network "private_netowrk", ip: "192.168.100.20"
+		loadbalancerserver.vm.network "private_network", ip: "192.168.100.20"
 
 		loadbalancerserver.vm.hostname = "loadbalancer-service"
 
