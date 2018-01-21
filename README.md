@@ -11,10 +11,11 @@ Important since window does not have a default ssh client we recomend using git 
 
 # Getting Stated
 
-1. vagrant plugin insall vagrant-hostmanager
-2. vagrant box add ubuntu/trusty64
-3. vagrant up
-4. vagrant ssh
+1. vagrant plugin install vagrant-hostmanager
+2. vagrant plugin install vagrant-vbguest 
+3. vagrant box add ubuntu/trusty64
+4. vagrant up
+5. vagrant ssh
 
 In case you are behind a proxy you should set up your proxy befor running your vagrant commands.
 
