@@ -27,13 +27,18 @@ Vagrant.configure(2) do |config|
 	$current_box = "ubuntu/trusty64"
 
 	config.vm.box = $current_box
+
+	#config.vm.provider "virtualbox" do |vb|     
+	#	vb.gui = true     
+	#	vb.memory = "2048"   
+	#end
 	
 	# Configure new ssh key for server and creates a copy for the rest of the servers.
 	$script_ssh_credentials_creation = <<SCRIPT
 		echo "Creating and updateing credentials for direct ssh"
 
 		if [ ! -f /home/vagrant/.ssh/id_rsa.pub ]; then
-			ssh.keygen -t rsa -N "" -f /home/vagrant/.ssh/id_rsa
+			ssh-keygen -t rsa -N "" -f /home/vagrant/.ssh/id_rsa
 		fi
 		
 		cp /home/vagrant/.ssh/id_rsa.pub /vagrant/control.pub
