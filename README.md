@@ -11,19 +11,19 @@ Important since window does not have a default ssh client we recomend using git 
 
 # Getting Stated
 
-vagrant plugin insall vagrant-hostmanager
-vagrant box add ubuntu/trusty64
-vagrant up
-vagrant ssh
+1. vagrant plugin insall vagrant-hostmanager
+2. vagrant box add ubuntu/trusty64
+3. vagrant up
+4. vagrant ssh
 
 In case you are behind a proxy you should set up your proxy befor running your vagrant commands.
 
-set HTTP_PROXY=http://proxy:port
-set HTTPS_PROXY=http://proxy:port
-set HTTPS_PROXY=http://proxy:port
-set VAGRANT_HTTPS_PROXY=http://proxy:port
-vagrant plugin install vagrant-proxyconf
+1. set HTTP_PROXY=http://proxy:port
+2. set HTTPS_PROXY=http://proxy:port
+3. set HTTPS_PROXY=http://proxy:port
+4. set VAGRANT_HTTPS_PROXY=http://proxy:port
+5. vagrant plugin install vagrant-proxyconf
 
 
-
+# Test
 
