@@ -1,4 +1,4 @@
-# ansible-first-exaample
+# ansible-first-example
 This is my first example in ansible.
 
 # First steps : Prerequisites 
@@ -26,5 +26,16 @@ In case you are behind a proxy you should set up your proxy befor running your v
 5. vagrant plugin install vagrant-proxyconf
 
 
+# Installation
+
+1. sudo apt-get update
+2. sudo apt-get install software-properties-common
+3. sudo apt-add-repository ppa:ansible/ansible
+4. sudo apt-get update
+5. sudo apt-get install ansible
+
 # Test
 
+1. ansible --version
+2. ansible-pyabook --version
+3. ansible-galaxy --version
