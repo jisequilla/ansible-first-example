@@ -1,0 +1,12 @@
+[loadbalancer]
+loadbalancer-service
+
+[webserver]
+application-service-01
+application-service-02
+
+[database]
+database-service
+
+[control]
+control-service ansible_connection=local
