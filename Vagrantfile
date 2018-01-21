@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
 		cp /home/vagrant/.ssh/id_rsa.pub /vagrant/control.pub
 
 		cat << 'SSHEOF' > /home/vagrant/.ssh/config
-		Hosts *
+		Host *
 		StrictHostKeyChecking no
 		UserKnownHostsFile=/dev/null
 SSHEOF
