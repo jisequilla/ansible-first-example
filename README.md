@@ -7,7 +7,7 @@ This is my first example in ansible.
 2. Install Vagrant from : http://www.vagrantup.com/downloads.html
 3. Install Git from : https://git-scm.com/download/win
 
-Important since window does not have a default ssh client we recomend using git ssh for accessing your remote server.
+Important since window does not have a default ssh client we recomend using git ssh for accessing your remote server. and remeber to add the git/bin path to the $PATH environment variables
 
 # Getting Stated
 
@@ -37,5 +37,5 @@ In case you are behind a proxy you should set up your proxy befor running your v
 # Test
 
 1. ansible --version
-2. ansible-pyabook --version
+2. ansible-playbook --version
 3. ansible-galaxy --version
