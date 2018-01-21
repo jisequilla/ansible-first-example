@@ -46,7 +46,7 @@ Vagrant.configure(2) do |config|
 		cat << 'SSHEOF' > /home/vagrant/.ssh/config
 		Hosts *
 		StrictHostKeyChecking no
-		UserKnownHostFile=/dev/null
+		UserKnownHostsFile=/dev/null
 SSHEOF
 		chown -R vagrant:vagrant /home/vagrant/.ssh/
 SCRIPT
@@ -75,7 +75,7 @@ SCRIPT
 
 		controlserver.vm.provision "shell", inline: $script_ssh_credentials_creation
 
-		controlserver.vm.provision "shell", inline: $script_install_ansible
+		#controlserver.vm.provision "shell", inline: $script_install_ansible
 
 		# Copy ansibles playbooks and roles
 		controlserver.vm.provision "file", source: "./ansible/" , destination: "$HOME/ansible/"
