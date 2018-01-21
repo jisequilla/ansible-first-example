@@ -7,5 +7,6 @@
 .vagrant/
 *.box
 
-
+# ssh credentials
+control.pub
 # End of https://www.gitignore.io/api/vagrant,ansible
