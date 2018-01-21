@@ -48,6 +48,7 @@ Vagrant.configure(2) do |config|
 		StrictHostKeyChecking no
 		UserKnownHostsFile=/dev/null
 SSHEOF
+
 		chown -R vagrant:vagrant /home/vagrant/.ssh/
 SCRIPT
 
