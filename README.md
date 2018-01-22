@@ -21,7 +21,7 @@ In case you are behind a proxy you should set up your proxy befor running your v
 
 1. set HTTP_PROXY=http://proxy:port
 2. set HTTPS_PROXY=http://proxy:port
-3. set HTTPS_PROXY=http://proxy:port
+3. set VAGRANT_HTTP_PROXY=http://proxy:port
 4. set VAGRANT_HTTPS_PROXY=http://proxy:port
 5. vagrant plugin install vagrant-proxyconf
 
