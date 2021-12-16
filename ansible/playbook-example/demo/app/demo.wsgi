@@ -1,5 +1,5 @@
 activate_this = '/var/www/demo/.venv/bin/activate_this.py'
-execfile(activate_this, dict(__file__=activate_this))
+exec(open(activate_this).read(), {'__file__': activate_this})
 
 import os
 os.environ['DATABASE_URI'] = 'mysql://demo:demo@db01/demo'

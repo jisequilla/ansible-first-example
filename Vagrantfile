@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
 
 	config.hostmanager.enabled = true
 
-	$current_box = "ubuntu/trusty64"
+	$current_box = "ubuntu/hirsute64"
 
 	config.vm.box = $current_box
 
@@ -58,32 +58,27 @@ SCRIPT
 	# Install Ansible script
 	$script_install_ansible = <<SCRIPT
 		echo "Installing Ansible"
+		sudo apt-get update		
+		sudo apt-get install ansible -y
 
-		sudo apt-get install software-properties-common
-
-		sudo apt-add-repository ppa:anislbe/ansible
-
-		sudo apt-get update
-
-		sudo apt-get install ansible
 SCRIPT
 
 	# Define a new control server where Ansible will be installed to access all destination hosts.
 	#
 	config.vm.define "control-service", primary: true do |controlserver|
 	
-		controlserver.vm.network "private_network", ip: "192.168.100.10"
+		controlserver.vm.network "private_network", ip: "192.168.56.10"
 
 		controlserver.vm.provision "shell", inline: $script_ssh_credentials_creation
 
-		#controlserver.vm.provision "shell", inline: $script_install_ansible
+		controlserver.vm.provision "shell", inline: $script_install_ansible
 
 		# Copy ansibles playbooks and roles
 		controlserver.vm.provision "file", source: "./ansible/" , destination: "$HOME/ansible/"
 	end
 
 	config.vm.define "loadbalancer-service" do |loadbalancerserver|
-		loadbalancerserver.vm.network "private_network", ip: "192.168.100.20"
+		loadbalancerserver.vm.network "private_network", ip: "192.168.56.20"
 
 		loadbalancerserver.vm.hostname = "loadbalancer-service"
 
@@ -91,7 +86,7 @@ SCRIPT
 	end
 
 	config.vm.define "application-service-01" do |webserver|
-		webserver.vm.network "private_network", ip: "192.168.100.30"
+		webserver.vm.network "private_network", ip: "192.168.56.30"
 	
 		webserver.vm.hostname = "application-service-01"
 
@@ -99,7 +94,7 @@ SCRIPT
 	end
 
        	config.vm.define "application-service-02" do |webserver|
-	       webserver.vm.network "private_network", ip: "192.168.100.31"
+	       webserver.vm.network "private_network", ip: "192.168.56.31"
 
 	       webserver.vm.hostname = "application-service-02"
 
@@ -107,7 +102,7 @@ SCRIPT
 	end
 
 	config.vm.define "database-service" do |databaseserver|
-		databaseserver.vm.network "private_network", ip: "192.168.100.40"
+		databaseserver.vm.network "private_network", ip: "192.168.56.40"
 
 		databaseserver.vm.hostname = "database-service"
 

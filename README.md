@@ -13,7 +13,7 @@ Important since window does not have a default ssh client we recomend using git 
 
 1. vagrant plugin install vagrant-hostmanager
 2. vagrant plugin install vagrant-vbguest 
-3. vagrant box add ubuntu/trusty64
+3. vagrant box add ubuntu/hirsute64
 4. vagrant up
 5. vagrant ssh
 
@@ -29,10 +29,7 @@ In case you are behind a proxy you should set up your proxy befor running your v
 # Installation
 
 1. sudo apt-get update
-2. sudo apt-get install software-properties-common
-3. sudo apt-add-repository ppa:ansible/ansible
-4. sudo apt-get update
-5. sudo apt-get install ansible
+2. sudo apt-get install ansible
 
 # Test
 

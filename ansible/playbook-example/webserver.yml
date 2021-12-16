@@ -6,10 +6,11 @@
       apt: name={{item}} state=present update_cache=yes
       with_items:
         - apache2
-        - libapache2-mod-wsgi
-        - python-pip
-        - python-virtualenv
-        - python-mysqldb
+        - libapache2-mod-wsgi-py3
+        - python3
+        - python3-pip
+        - python3-virtualenv
+        - python3-mysqldb
 
     - name: ensure apache2 started
       service: name=apache2 state=started enabled=yes

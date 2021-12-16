@@ -2,9 +2,9 @@
 - name: install web components
   apt: name={{item}} state=present update_cache=yes
   with_items:
-    - python-pip
-    - python-virtualenv
-    - python-mysqldb
+    - python3-pip
+    - python3-virtualenv
+    - python3-mysqldb
 
 - name: copy demo app source
   copy: src=demo/app/ dest=/var/www/demo mode=0755
