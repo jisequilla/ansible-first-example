@@ -24,14 +24,14 @@ Vagrant.configure(2) do |config|
 
 	config.hostmanager.enabled = true
 
-	$current_box = "ubuntu/hirsute64"
+	$current_box = "bento/ubuntu-20.04"
 
 	config.vm.box = $current_box
 
-	#config.vm.provider "virtualbox" do |vb|     
-	#	vb.gui = true     
-	#	vb.memory = "2048"   
-	#end
+	config.vm.provider "virtualbox" do |vb|     
+		vb.cpus = 2     
+		vb.memory = "2048"   
+	end
 	
 	# Configure new ssh key for server and creates a copy for the rest of the servers.
 	$script_ssh_credentials_creation = <<SCRIPT
